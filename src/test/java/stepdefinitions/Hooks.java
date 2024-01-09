@@ -7,7 +7,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.junit.jupiter.api.extension.ExtendWith;
 import utilities.Driver;
-import static pages.BasePage.envURL;
+
 @ExtendWith(TestResultLogger.class)
 public class Hooks {
 	@Before

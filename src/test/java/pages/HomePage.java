@@ -1,16 +1,14 @@
 package pages;
 
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,6 +25,7 @@ public class HomePage extends BasePage {
 	}
 	Helpers help=new Helpers();
 	ExcelCellReader excelreader = new ExcelCellReader();
+	JavascriptExecutor jre = (JavascriptExecutor) Driver.getDriver();
 
 	@FindBy(css ="input[placeholder*='Ürün, Marka Arayın']")
 	public WebElement placeholderSearchArea;
@@ -65,6 +64,9 @@ public class HomePage extends BasePage {
 	@FindBy(xpath ="//a[@title='Sepetim']")
 	public WebElement BasketBtn;
 	
+	@FindBy(className ="m-basket__figureLink")
+	public WebElement SelectedItemLinkBtn;
+	
 	@FindBy(css ="span[class='m-productPrice__salePrice']")
 	public WebElement productPriceInBasket;
 
@@ -73,20 +75,23 @@ public class HomePage extends BasePage {
 	
 	@FindBy(css ="button[id='removeCartItemBtn0-key-0']")
 	public WebElement deleteItem;
+		
+	@FindBy(css ="button[class='m-notification__close bwi-close']")
+	public WebElement closeNotification;
 	
-	@FindBy(css ="select[id='quantitySelect0-key-0']")
-	public WebElement selectItemCountDropdown;
+	@FindBy(className ="m-empty__message")
+	public WebElement emptyMessage;
 	
-	@FindBy(css ="ption[value='2']")
-	public WebElement item2;
 	
-	public void selectRandomProduct() {
+	public void selectRandomProduct() throws InterruptedException {
+		Thread.sleep(1000);
 		int maxProduct = productElems.size();
 		Random random = new Random();
 		int randomProduct = random.nextInt(maxProduct);
 		productElems.get(randomProduct).click();	
 	}
 	public void selectRandomSize() throws InterruptedException {
+		Thread.sleep(1000);
 		List<WebElement> specificSpans = new ArrayList<>();
 		  for (WebElement element : productSize) {
 	          String className = element.getAttribute("class");
@@ -100,20 +105,23 @@ public class HomePage extends BasePage {
 		specificSpans.get(randomProductSize).click();		
 	}
 	
-	public void setTextForSearch(String text){		
+	public void setTextForSearch(String text) throws InterruptedException{
+		Thread.sleep(1000);
 		searchArea.click();
 		searchArea.sendKeys(text);
-		ExcelCellReader.readCell(1, 1);
+		//ExcelCellReader.readCell(1, 1);
 	}
 
-	public void searchText(String text){
+	public void searchText(String text) throws InterruptedException{
+		Thread.sleep(1000);
 		waitForClickablility(searchArea,10);
 		searchArea.click();
 		setTextForSearch(text);
 		
 		searchArea.sendKeys(Keys.ENTER);
 	}
-	public void Writefile() throws IOException {
+	public void Writefile() throws IOException, InterruptedException {
+		Thread.sleep(1000);
 		help.clearFile();
 		String productNameText = productName.getText();
 		String productPriceText = productPrice.getText();
@@ -137,6 +145,46 @@ public class HomePage extends BasePage {
         System.out.println("Değiştirilmiş değer: " + price);
        
 	}
-	
+	public void clickAcceptBtn(){
+		waitForClickablility(acceptCookies,10);
+		acceptCookies.click();
+	}
+	public void clickGenderBtn() throws InterruptedException{
+		Thread.sleep(1000);
+		waitForClickablility(genderBtn,10).click();
+	}
+	public void clickAndSearchBtn(String text) throws InterruptedException{
+		Thread.sleep(1000);
+		waitForClickablility(placeholderSearchArea,10);
+		placeholderSearchArea.click();
+		setTextForSearch(text);
+	}
+	public void deleteSearch() throws InterruptedException{
+		Thread.sleep(1000);
+		waitForClickablility(deleteBtn,10).click();
+	}
+	public void clickAddToBasketBtn() throws InterruptedException{	
+		Thread.sleep(1000);
+		waitForClickablility(addBasketBtn,100).click();
+	}
+	public void clickBasketBtn() throws InterruptedException{	
+		Thread.sleep(1000);
+		waitForClickablility(closeNotification,100).click();
+		jre.executeScript("arguments[0].scrollIntoView();", BasketBtn);
+		jre.executeScript("arguments[0].click();", BasketBtn);
+		Thread.sleep(1000);
+	}
+	public void clickSelectedİtemInBasket() throws InterruptedException{	
+		Thread.sleep(1000);
+		//SelectedItemLinkBtn.click();
+		jre.executeScript("arguments[0].scrollIntoView();", SelectedItemLinkBtn);
+		jre.executeScript("arguments[0].click();", SelectedItemLinkBtn);
+		
+	}
+	public void clickDeleteItemBtn() throws InterruptedException{	
+		Thread.sleep(1000);
+		waitForClickablility(deleteItem,10).click();
+		Thread.sleep(1000);
+	}
 
 }

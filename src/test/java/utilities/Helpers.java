@@ -22,12 +22,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
+
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utilities.ConfigReader;
+
 
 public class Helpers {
     public static String getScreenshot(String name) throws IOException {
@@ -56,7 +56,7 @@ public class Helpers {
         	currentLine++;
         	if (currentLine == lineNumber) {
                 System.out.println("Line " + lineNumber + ": " + line);
-                String text = line; 
+               // String text = line; 
                 // Perform actions with the content of the selected line here
                 break; // Exit the loop once the desired line is read
             }
