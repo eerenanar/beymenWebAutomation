@@ -55,7 +55,7 @@ public class Helpers {
         while ((line = reader.readLine()) != null) {
         	currentLine++;
         	if (currentLine == lineNumber) {
-                System.out.println("Line " + lineNumber + ": " + line);
+               // System.out.println("Line " + lineNumber + ": " + line);
                // String text = line; 
                 // Perform actions with the content of the selected line here
                 break; // Exit the loop once the desired line is read

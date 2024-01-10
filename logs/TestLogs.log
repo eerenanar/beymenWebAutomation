@@ -1,2 +1,26 @@
 [INFO ] 2024-01-10 21:40:27.667 [main] Logs - Page loaded
 [INFO ] 2024-01-10 21:43:45.906 [main] Logs - Page loaded
+[INFO ] 2024-01-10 21:54:26.299 [main] Logs - Page loaded
+[INFO ] 2024-01-10 21:54:28.706 [main] Logs - First Value Searched
+[INFO ] 2024-01-10 21:54:29.816 [main] Logs - Search deleted
+[INFO ] 2024-01-10 21:54:32.078 [main] Logs - Shirts listed
+[INFO ] 2024-01-10 21:54:34.659 [main] Logs - Random product opened.
+[INFO ] 2024-01-10 21:54:35.694 [main] Logs - item deatils writing to TestFile.txt
+[INFO ] 2024-01-10 21:54:37.903 [main] Logs - item added to basket
+[INFO ] 2024-01-10 21:54:40.985 [main] Logs - Values Validated.
+[INFO ] 2024-01-10 21:54:47.430 [main] Logs - item count updated
+[INFO ] 2024-01-10 22:02:46.280 [main] Logs - Page loaded
+[INFO ] 2024-01-10 22:02:48.529 [main] Logs - First Value Searched
+[INFO ] 2024-01-10 22:02:49.629 [main] Logs - Search deleted
+[INFO ] 2024-01-10 22:02:52.089 [main] Logs - Shirts listed
+[INFO ] 2024-01-10 22:05:19.456 [main] Logs - Page loaded
+[INFO ] 2024-01-10 22:05:21.701 [main] Logs - First Value Searched
+[INFO ] 2024-01-10 22:05:22.838 [main] Logs - Search deleted
+[INFO ] 2024-01-10 22:05:25.121 [main] Logs - Shirts listed
+[INFO ] 2024-01-10 22:05:26.618 [main] Logs - Random product opened.
+[INFO ] 2024-01-10 22:05:27.859 [main] Logs - item deatils writing to TestFile.txt
+[INFO ] 2024-01-10 22:05:30.168 [main] Logs - item added to basket
+[INFO ] 2024-01-10 22:05:32.996 [main] Logs - Comfort Fit Beyaz Gömlek=Comfort Fit Beyaz GömlekValues Validated.
+[INFO ] 2024-01-10 22:05:39.406 [main] Logs - item count updated
+[INFO ] 2024-01-10 22:05:43.723 [main] Logs - items deleted
+[INFO ] 2024-01-10 22:05:43.727 [main] Logs - Test completed.

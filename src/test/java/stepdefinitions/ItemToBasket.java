@@ -74,10 +74,8 @@ public void compare_item_price_and_basket_price() throws IOException, Interrupte
 
 	home.clickBasketBtn();
 	Assert.assertEquals(home.productTitleInBasket.getText(), help.readFile(1));
-	System.out.println(home.productPriceInBasket.getText());
-	System.out.println(home.productTitleInBasket.getText());
 	help.readFile(1);
-	loggers.info("Values Validated.");
+	loggers.info(home.productTitleInBasket.getText()+ " = " +help.readFile(1) +" / Values Validated.");
 }
 
 @And("item count up on basket")
