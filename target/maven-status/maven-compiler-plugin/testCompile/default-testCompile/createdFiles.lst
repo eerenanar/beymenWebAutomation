@@ -1,3 +1,4 @@
+utilities/ExcelCellReader$1.class
 utilities/Helpers.class
 stepdefinitions/Hooks.class
 pages/HomePage.class
@@ -9,7 +10,6 @@ utilities/Helpers$1.class
 utilities/Helpers$2.class
 utilities/ConfigReader.class
 pages/BasePage$2.class
-pages/OpeningTimes.class
 utilities/Log.class
 runners/RunTest.class
 stepdefinitions/TestResultLogger.class

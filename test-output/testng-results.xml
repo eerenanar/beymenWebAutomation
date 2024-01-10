@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-10T02:30:51 TRT" name="Default suite" finished-at="2024-01-10T02:31:22 TRT" duration-ms="31169">
+  <suite started-at="2024-01-10T21:43:39 TRT" name="Default suite" finished-at="2024-01-10T21:43:54 TRT" duration-ms="15063">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.RunTest@61c4eee0]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-01-10T02:30:51 TRT" name="Default test" finished-at="2024-01-10T02:31:22 TRT" duration-ms="31169">
+    <test started-at="2024-01-10T21:43:39 TRT" name="Default test" finished-at="2024-01-10T21:43:54 TRT" duration-ms="15063">
       <class name="runners.RunTest">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.RunTest@61c4eee0]" started-at="2024-01-10T02:30:51 TRT" name="setUpClass" finished-at="2024-01-10T02:30:51 TRT" duration-ms="225" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.RunTest@61c4eee0]" started-at="2024-01-10T21:43:39 TRT" name="setUpClass" finished-at="2024-01-10T21:43:39 TRT" duration-ms="230" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6b162ecc]]>
+                <![CDATA[org.testng.TestRunner@3030836d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.RunTest@61c4eee0]" started-at="2024-01-10T02:30:51 TRT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-10T02:31:22 TRT" duration-ms="30886" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.RunTest@61c4eee0]" started-at="2024-01-10T21:43:39 TRT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-10T21:43:54 TRT" duration-ms="14763" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -34,10 +34,51 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchFrameException">
+            <message>
+              <![CDATA[Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '17.0.9'
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [B8B59284-B41B-491D-9466-95DE1A0584FB, findElements {using=xpath, value=//*[@id="productList"]/div}]
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 17.2.1, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 23C71, safari:platformVersion: 14.2.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: B8B59284-B41B-491D-9466-95DE1A0584FB]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchFrameException: Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '17.0.9'
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [B8B59284-B41B-491D-9466-95DE1A0584FB, findElements {using=xpath, value=//*[@id="productList"]/div}]
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 17.2.1, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 23C71, safari:platformVersion: 14.2.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: B8B59284-B41B-491D-9466-95DE1A0584FB
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:179)
+at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:102)
+at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:359)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:87)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:37)
+at jdk.proxy2/jdk.proxy2.$Proxy44.size(Unknown Source)
+at pages.HomePage.selectRandomProduct(HomePage.java:88)
+at stepdefinitions.ItemToBasket.select_anyone_item_on_list(ItemToBasket.java:59)
+at ✽.select anyone item on list(file:///Users/erenanar/eclipse-workspace/testiniumProjectEanar/src/test/resources/Features/Automation1001_AddtoBasket.feature:9)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchFrameException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.RunTest@61c4eee0]" started-at="2024-01-10T02:31:22 TRT" name="tearDownClass" finished-at="2024-01-10T02:31:22 TRT" duration-ms="38" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.RunTest@61c4eee0]" started-at="2024-01-10T21:43:54 TRT" name="tearDownClass" finished-at="2024-01-10T21:43:54 TRT" duration-ms="45" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

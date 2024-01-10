@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jan 10 02:30:51 TRT 2024</td>
+<td>Started on:</td><td>Wed Jan 10 21:43:39 TRT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>31 seconds (31169 ms)</td>
+<tr><td>Total time:</td><td>15 seconds (15063 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -77,8 +77,65 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='runners.RunTest.runScenario()'><b>runScenario</b><br>Test class: runners.RunTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "testinium Scenario", "testinium feature"</td>
-<td></td>
-<td>30</td>
+<td><div><pre>org.openqa.selenium.NoSuchFrameException: Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;17.0.9&apos;
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [B8B59284-B41B-491D-9466-95DE1A0584FB, findElements {using=xpath, value=//*[@id=&quot;productList&quot;]/div}]
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 17.2.1, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 23C71, safari:platformVersion: 14.2.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: B8B59284-B41B-491D-9466-95DE1A0584FB
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:179)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:102)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:37)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.size(Unknown Source)
+	at pages.HomePage.selectRandomProduct(HomePage.java:88)
+	at stepdefinitions.ItemToBasket.select_anyone_item_on_list(ItemToBasket.java:59)
+	at ✽.select anyone item on list(file:///Users/erenanar/eclipse-workspace/testiniumProjectEanar/src/test/resources/Features/Automation1001_AddtoBasket.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace106350019", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace106350019'><pre>org.openqa.selenium.NoSuchFrameException: Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;17.0.9&apos;
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [B8B59284-B41B-491D-9466-95DE1A0584FB, findElements {using=xpath, value=//*[@id=&quot;productList&quot;]/div}]
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 17.2.1, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 23C71, safari:platformVersion: 14.2.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: B8B59284-B41B-491D-9466-95DE1A0584FB
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:179)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:102)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:37)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.size(Unknown Source)
+	at pages.HomePage.selectRandomProduct(HomePage.java:88)
+	at stepdefinitions.ItemToBasket.select_anyone_item_on_list(ItemToBasket.java:59)
+	at ✽.select anyone item on list(file:///Users/erenanar/eclipse-workspace/testiniumProjectEanar/src/test/resources/Features/Automation1001_AddtoBasket.feature:9)
+</pre></div></td>
+<td>14</td>
 <td>runners.RunTest@61c4eee0</td></tr>
 </table><p>
 </body>

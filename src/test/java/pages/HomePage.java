@@ -165,11 +165,11 @@ public class HomePage extends BasePage {
 	}
 	public void clickAddToBasketBtn() throws InterruptedException{	
 		Thread.sleep(1000);
-		waitForClickablility(addBasketBtn,100).click();
+		waitForClickablility(addBasketBtn,10).click();
 	}
 	public void clickBasketBtn() throws InterruptedException{	
 		Thread.sleep(1000);
-		waitForClickablility(closeNotification,100).click();
+		waitForClickablility(closeNotification,10).click();
 		jre.executeScript("arguments[0].scrollIntoView();", BasketBtn);
 		jre.executeScript("arguments[0].click();", BasketBtn);
 		Thread.sleep(1000);

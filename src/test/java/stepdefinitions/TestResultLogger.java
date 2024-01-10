@@ -2,13 +2,14 @@ package stepdefinitions;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
-import utilities.Log;
+
+import LoggerPackage.Logs;
 
 import java.util.Optional;
 
 public class TestResultLogger implements TestWatcher {
 
-    Log log = new Log();
+    Logs log = new Logs();
     @Override
     public void testDisabled(ExtensionContext context, Optional<String> reason) {
         TestWatcher.super.testDisabled(context, reason);

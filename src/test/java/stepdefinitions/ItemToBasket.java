@@ -1,11 +1,11 @@
 package stepdefinitions;
 
 import java.io.IOException;
-
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 
+import LoggerPackage.Logs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,9 +15,10 @@ import utilities.ExcelCellReader;
 import utilities.Helpers;
 
 public class ItemToBasket {
-
+	
 	HomePage home=new HomePage();
 	Helpers help= new Helpers();
+	Logs loggers= new Logs();
 	ExcelCellReader excelreader = new ExcelCellReader();
 	Actions actions=new Actions(Driver.getDriver());
 	JavascriptExecutor jre = (JavascriptExecutor) Driver.getDriver();
@@ -26,49 +27,46 @@ public class ItemToBasket {
 public void user_is_on_beymen_home_page() throws InterruptedException {
 	home.clickAcceptBtn();
 	home.clickGenderBtn();
-	System.out.println("Page Loaded");
+	loggers.info("Page loaded");
 }
 @And("search first value on excel")
 public void search_first_value_on_excel() throws InterruptedException {
-//	home.placeholderSearchArea.click();
-//	home.setTextForSearch("şort");
+
 	home.clickAndSearchBtn("şort");
-	//home.setTextForSearch(excelreader.readCell(1, 1));
-	System.out.println("First Value Searched");
+	loggers.info("First Value Searched");
 	}
 @And("delete first value from search bar")
 public void delete_first_value_from_search_bar() throws InterruptedException {
 
-	//home.deleteBtn.click();	
 	home.deleteSearch();
-	System.out.println("Search deleted");
+	loggers.info("Search deleted");	
 	}
 
 @And("search second value on excel")
 public void search_second_value_on_excel() throws InterruptedException {
 	home.searchText("gömlek");
-	System.out.println("gömlekler listelendi");
+	loggers.info("Shirts listed");
 }
 
 @And("select anyone item on list")
 public void select_anyone_item_on_list() throws InterruptedException {
 	home.selectRandomProduct();
+	loggers.info("Random product opened.");
 
-	System.out.println("Random product opened.");
 }
 
 @And("write selected item values to txt")
 public void write_selected_item_values_to_txt() throws IOException, InterruptedException {
 	home.Writefile();
 	help.readFile(0);
-	System.out.println("item deatils writing to TestFile.txt");
+	loggers.info("item deatils writing to TestFile.txt");
 }
 @And("selected item add to basket")
 public void selected_item_add_to_basket() throws IOException, InterruptedException {
 	
 	home.selectRandomSize();
 	home.clickAddToBasketBtn();
-	System.out.println("item added to basket");
+	loggers.info("item added to basket");
 	
 }
 @And("compare item price and basket price")
@@ -79,8 +77,7 @@ public void compare_item_price_and_basket_price() throws IOException, Interrupte
 	System.out.println(home.productPriceInBasket.getText());
 	System.out.println(home.productTitleInBasket.getText());
 	help.readFile(1);
-	
-	System.out.println("Values Validated.");
+	loggers.info("Values Validated.");
 }
 
 @And("item count up on basket")
@@ -90,8 +87,7 @@ public void compare_item_price_and_basket_price() throws IOException, Interrupte
 		home.clickAddToBasketBtn();
 		home.clickBasketBtn();
 		Thread.sleep(1000);
-
-		System.out.println("item count updated");
+		loggers.info("item count updated");
 }
 @And("delete item from basket")
 	public void delete_item_from_basket() throws InterruptedException {
@@ -99,13 +95,16 @@ public void compare_item_price_and_basket_price() throws IOException, Interrupte
 		home.clickDeleteItemBtn();
 		boolean isShown=home.emptyMessage.isDisplayed();
 		if(isShown==true) {
-			System.out.println("items deleted");
+			loggers.info("items deleted");
+		}else {
+			loggers.error("items cannot deleted");
 		}
 }
 
 @Then("user completed tests")
 public void user_completed_tests() {
-	System.out.println("Test completed.");
+	loggers.info("Test completed.");
+
 }
 
 }
