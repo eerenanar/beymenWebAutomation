@@ -102,7 +102,6 @@ public void compare_item_price_and_basket_price() throws IOException, Interrupte
 @Then("user completed tests")
 public void user_completed_tests() {
 	loggers.info("Test completed.");
-
 }
 
 }
