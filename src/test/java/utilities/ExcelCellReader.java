@@ -9,30 +9,33 @@ import java.io.IOException;
 
 public class ExcelCellReader {
     public static void main(String[] args) {
-    	readCell(1, 2); 
+    	String cellData = readCell(0, 1);
+    	System.out.println("Returned Cell Data: " + cellData);
     }
-    public static void readCell(int rowNumber, int columnNumber) {
-    	
+    public static String readCell(int rowNumber,int cellNumber) {
+    	String cellData = null;
         try {
-            // Excel dosyasının yolu ve adı
-            String filePath = "ExcelFile.xlsx";
-            FileInputStream file = new FileInputStream(new File(filePath));
+        	String projectPath = System.getProperty("user.dir");
+            FileInputStream file = new FileInputStream(new File(projectPath+"/ExcelFile.xlsx"));
+            
             Workbook workbook = new XSSFWorkbook(file);
             Sheet sheet = workbook.getSheetAt(0);
 
-            Row row = sheet.getRow(rowNumber); // Satır
-            Cell cell = row.getCell(columnNumber); // Sütun
+            Row row = sheet.getRow(rowNumber); 
+            Cell cell = row.getCell(cellNumber); 
 
-            // Hücre içeriğini yazdır
             if (cell != null) {
                 switch (cell.getCellType()) {
                     case STRING:
+                    	cellData = cell.getStringCellValue();
                         System.out.println("Hücre Değeri (String): " + cell.getStringCellValue());
                         break;
                     case NUMERIC:
+                    	cellData = String.valueOf(cell.getNumericCellValue());
                         System.out.println("Hücre Değeri (Numeric): " + cell.getNumericCellValue());
                         break;
                     case BOOLEAN:
+                    	cellData = String.valueOf(cell.getBooleanCellValue());
                         System.out.println("Hücre Değeri (Boolean): " + cell.getBooleanCellValue());
                         break;
                     default:
@@ -42,11 +45,11 @@ public class ExcelCellReader {
                 System.out.println("Hücre boş");
             }
 
-            // Dosyayı kapat
             workbook.close();
             file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+		return cellData;
     }
 }

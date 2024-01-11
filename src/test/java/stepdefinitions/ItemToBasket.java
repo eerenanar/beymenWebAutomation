@@ -19,7 +19,7 @@ public class ItemToBasket {
 	HomePage home=new HomePage();
 	Helpers help= new Helpers();
 	Logs loggers= new Logs();
-	ExcelCellReader excelreader = new ExcelCellReader();
+	//private ExcelCellReader excelReader = new ExcelCellReader();
 	Actions actions=new Actions(Driver.getDriver());
 	JavascriptExecutor jre = (JavascriptExecutor) Driver.getDriver();
 	
@@ -32,7 +32,7 @@ public void user_is_on_beymen_home_page() throws InterruptedException {
 @And("search first value on excel")
 public void search_first_value_on_excel() throws InterruptedException {
 
-	home.clickAndSearchBtn("şort");
+	home.clickAndSearchBtn(ExcelCellReader.readCell(0, 0));
 	loggers.info("First Value Searched");
 	}
 @And("delete first value from search bar")
@@ -44,7 +44,7 @@ public void delete_first_value_from_search_bar() throws InterruptedException {
 
 @And("search second value on excel")
 public void search_second_value_on_excel() throws InterruptedException {
-	home.searchText("gömlek");
+	home.searchText(ExcelCellReader.readCell(0, 1));
 	loggers.info("Shirts listed");
 }
 
